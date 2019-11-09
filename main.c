@@ -6,7 +6,7 @@ int main() {
   int i;
   for (i = 0; i < 10; i++){
     ary[i] = rand_num();
-    printf("\trandom %d: %d\n", i, rand_num());
+    printf("\trandom %d: %d\n", i, ary[i]);
   }
 
   printf("\nWriting numbers to file...\n");
@@ -61,79 +61,54 @@ int main() {
   if (fd < 0){
     printf("%s\n", strerror(errno));
   }
-  int temp;
-  read(fd, &temp, sizeof(ary[0]));
+
+  int ary2[10];
+  read(fd, &ary2[0], sizeof(ary[0]));
   if (errno != 0){
     printf("%s\n", strerror(errno));
   }
-  else{
-    printf("\trandom %d: %d\n", i, temp);
-  }
-  read(fd, &temp, sizeof(ary[1]));
+  read(fd, &ary2[1], sizeof(ary[1]));
   if (errno != 0){
     printf("%s\n", strerror(errno));
   }
-  else{
-    printf("\trandom %d: %d\n", i, temp);
-  }
-  read(fd, &temp, sizeof(ary[2]));
+  read(fd, &ary2[2], sizeof(ary[2]));
   if (errno != 0){
     printf("%s\n", strerror(errno));
   }
-  else{
-    printf("\trandom %d: %d\n", i, temp);
-  }
-  read(fd, &temp, sizeof(ary[3]));
+  read(fd, &ary2[3], sizeof(ary[3]));
   if (errno != 0){
     printf("%s\n", strerror(errno));
   }
-  else{
-    printf("\trandom %d: %d\n", i, temp);
-  }
-  read(fd, &temp, sizeof(ary[4]));
+  read(fd, &ary2[4], sizeof(ary[4]));
   if (errno != 0){
     printf("%s\n", strerror(errno));
   }
-  else{
-    printf("\trandom %d: %d\n", i, temp);
-  }
-  read(fd, &temp, sizeof(ary[5]));
+  read(fd, &ary2[5], sizeof(ary[5]));
   if (errno != 0){
     printf("%s\n", strerror(errno));
   }
-  else{
-    printf("\trandom %d: %d\n", i, temp);
-  }
-  read(fd, &temp, sizeof(ary[6]));
+  read(fd, &ary2[6], sizeof(ary[6]));
   if (errno != 0){
     printf("%s\n", strerror(errno));
   }
-  else{
-    printf("\trandom %d: %d\n", i, temp);
-  }
-  read(fd, &temp, sizeof(ary[7]));
+  read(fd, &ary2[7], sizeof(ary[7]));
   if (errno != 0){
     printf("%s\n", strerror(errno));
   }
-  else{
-    printf("\trandom %d: %d\n", i, temp);
-  }
-  read(fd, &temp, sizeof(ary[8]));
+  read(fd, &ary2[8], sizeof(ary[8]));
   if (errno != 0){
     printf("%s\n", strerror(errno));
   }
-  else{
-    printf("\trandom %d: %d\n", i, temp);
-  }
-  read(fd, &temp, sizeof(ary[9]));
+  read(fd, &ary2[9], sizeof(ary[9]));
   if (errno != 0){
     printf("%s\n", strerror(errno));
-  }
-  else{
-    printf("\trandom %d: %d\n", i, temp);
   }
   close(fd);
 
+  printf("\nVerification that written values were the same:\n");
+  for (i = 0; i < 10; i++){
+    printf("\trandom %d: %d\n", i, ary2[i]);
+  }
 
 
   return 0;
