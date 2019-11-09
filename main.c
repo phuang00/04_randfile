@@ -15,43 +15,7 @@ int main() {
   if (fd < 0){
     printf("%s\n", strerror(errno));
   }
-  write(fd, &ary[0], sizeof(ary[0]));
-  if (errno != 0){
-    printf("%s\n", strerror(errno));
-  }
-  write(fd, &ary[1], sizeof(ary[1]));
-  if (errno != 0){
-    printf("%s\n", strerror(errno));
-  }
-  write(fd, &ary[2], sizeof(ary[2]));
-  if (errno != 0){
-    printf("%s\n", strerror(errno));
-  }
-  write(fd, &ary[3], sizeof(ary[3]));
-  if (errno != 0){
-    printf("%s\n", strerror(errno));
-  }
-  write(fd, &ary[4], sizeof(ary[4]));
-  if (errno != 0){
-    printf("%s\n", strerror(errno));
-  }
-  write(fd, &ary[5], sizeof(ary[5]));
-  if (errno != 0){
-    printf("%s\n", strerror(errno));
-  }
-  write(fd, &ary[6], sizeof(ary[6]));
-  if (errno != 0){
-    printf("%s\n", strerror(errno));
-  }
-  write(fd, &ary[7], sizeof(ary[7]));
-  if (errno != 0){
-    printf("%s\n", strerror(errno));
-  }
-  write(fd, &ary[8], sizeof(ary[8]));
-  if (errno != 0){
-    printf("%s\n", strerror(errno));
-  }
-  write(fd, &ary[9], sizeof(ary[9]));
+  write(fd, ary, sizeof(ary));
   if (errno != 0){
     printf("%s\n", strerror(errno));
   }
@@ -64,43 +28,7 @@ int main() {
   }
 
   int ary2[10];
-  read(fd, &ary2[0], sizeof(ary[0]));
-  if (errno != 0){
-    printf("%s\n", strerror(errno));
-  }
-  read(fd, &ary2[1], sizeof(ary[1]));
-  if (errno != 0){
-    printf("%s\n", strerror(errno));
-  }
-  read(fd, &ary2[2], sizeof(ary[2]));
-  if (errno != 0){
-    printf("%s\n", strerror(errno));
-  }
-  read(fd, &ary2[3], sizeof(ary[3]));
-  if (errno != 0){
-    printf("%s\n", strerror(errno));
-  }
-  read(fd, &ary2[4], sizeof(ary[4]));
-  if (errno != 0){
-    printf("%s\n", strerror(errno));
-  }
-  read(fd, &ary2[5], sizeof(ary[5]));
-  if (errno != 0){
-    printf("%s\n", strerror(errno));
-  }
-  read(fd, &ary2[6], sizeof(ary[6]));
-  if (errno != 0){
-    printf("%s\n", strerror(errno));
-  }
-  read(fd, &ary2[7], sizeof(ary[7]));
-  if (errno != 0){
-    printf("%s\n", strerror(errno));
-  }
-  read(fd, &ary2[8], sizeof(ary[8]));
-  if (errno != 0){
-    printf("%s\n", strerror(errno));
-  }
-  read(fd, &ary2[9], sizeof(ary[9]));
+  read(fd, ary2, sizeof(ary2));
   if (errno != 0){
     printf("%s\n", strerror(errno));
   }
