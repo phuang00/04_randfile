@@ -6,7 +6,7 @@ int rand_num(){
     printf("%s\n", strerror(errno));
   }
   int rand;
-  read(fd, &rand, 4);
+  read(fd, &rand, sizeof(rand));
   if (errno != 0){
     printf("%s\n", strerror(errno));
   }
