@@ -10,6 +10,7 @@ int main() {
   }
 
   printf("\nWriting numbers to file...\n");
+  umask(002);
   int fd = open("file", O_CREAT | O_WRONLY, 0644);
   if (fd < 0){
     printf("%s\n", strerror(errno));
