@@ -18,3 +18,7 @@ run:
 
 memcheck:
 	valgrind --leak-check:yes ./test_rand
+
+clean:
+	rm *.o
+	rm *~
